@@ -106,11 +106,11 @@ footer {
   display: block;
 }
 
-.rock > .icon,
-.paper > .icon,
-.scissors > .icon {
+.rock > .iconContainer,
+.paper > .iconContainer,
+.scissors > .iconContainer {
   background: floralwhite;
-  padding: 30px;
+  padding: 20px;
   border-radius: 100%;
   box-shadow: inset 0px 5px 1px 0px #b8bed2;
 }
@@ -146,4 +146,50 @@ footer {
   padding: 20px;
   border-radius: 100%;
   box-shadow: inset 0px -7px 0px 0px #c76c1b;
+}
+
+.rock .icon,
+.paper .icon,
+.scissors .icon {
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+.rock .icon {
+  background-image: url(images/icon-rock.svg);
+}
+
+.paper .icon {
+  background-image: url(images/icon-paper.svg);
+}
+
+.scissors .icon {
+  background-image: url(images/icon-scissors.svg);
+}
+
+.upper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 190px;
+  margin-top: -100px;
+}
+
+.lower {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.step1 {
+  background: url(images/bg-triangle.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 470px;
+  margin-top: 100px;
 }

@@ -98,11 +98,52 @@ footer {
   right: 0;
 }
 
-
 .hidden {
   display: none;
 }
 
 .visible {
   display: block;
+}
+
+.rock > .icon,
+.paper > .icon,
+.scissors > .icon {
+  background: floralwhite;
+  padding: 30px;
+  border-radius: 100%;
+  box-shadow: inset 0px 5px 1px 0px #b8bed2;
+}
+
+.rock {
+  background: radial-gradient(
+    farthest-corner at bottom,
+    hsl(349, 71%, 52%) 60%,
+    hsl(349, 70%, 56%) 80%
+  );
+  padding: 20px;
+  border-radius: 100%;
+  box-shadow: inset 0px -7px 0px 0px #9e1532;
+}
+
+.paper {
+  background: radial-gradient(
+    farthest-corner at bottom,
+    hsl(230, 89%, 62%) 60%,
+    hsl(230, 89%, 65%) 80%
+  );
+  padding: 20px;
+  border-radius: 100%;
+  box-shadow: inset 0px -7px 0px 0px #2945c3;
+}
+
+.scissors {
+  background: radial-gradient(
+    farthest-corner at bottom,
+    hsl(39, 89%, 49%) 60%,
+    hsl(40, 84%, 53%) 80%
+  );
+  padding: 20px;
+  border-radius: 100%;
+  box-shadow: inset 0px -7px 0px 0px #c76c1b;
 }

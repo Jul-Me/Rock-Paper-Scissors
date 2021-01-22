@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -6,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Barlow Semi Condensed';
+  font-family: 'Barlow Semi Condensed', sans-serif;
   color: floralwhite;
   height: 100vh;
   background: radial-gradient(
@@ -35,17 +37,72 @@ body {
 ul {
   list-style-type: none;
   font-size: 30px;
-  font-weight: 700;
   text-align: left;
   align-content: flex-start;
   margin: 0;
   padding-left: 0px;
 }
 
-.score {
+.scorebox {
   background-color: #fbfbfb;
   border: 0.5px solid #fbfbfb;
   border-radius: 8px;
   width: 125px;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 39px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.semiBold {
+  font-weight: 600;
+}
+
+.scoreLabel {
+  font-size: 15px;
+  color: #555267;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.score {
+  font-size: 65px;
+  color: #555267;
+}
+
+.rules {
+  background-color: inherit;
+  color: floralwhite;
+  border: 2px solid #5c6b86;
+  border-radius: 8px;
+  text-align: center;
+  width: 110px;
+  height: 40px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+.rules:active {
+  outline: none;
+}
+
+footer {
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }

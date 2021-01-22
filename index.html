@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link
-      href="https://fonts.googleapis.com/css?family=Barlow Semi Condensed"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
@@ -12,12 +9,15 @@
   </head>
   <body>
     <div id="container" class="container">
-      <ul>
+      <ul class="bold">
         <li>ROCK</li>
         <li>PAPER</li>
         <li>SCISSORS</li>
       </ul>
-      <div id="score" class="score"></div>
+      <div id="scorebox" class="scorebox">
+        <div class="scoreLabel semiBold">score</div>
+        <div id="score" class="score bold">12</div>
+      </div>
     </div>
 
     <section id="step1" class="step1">
@@ -26,31 +26,34 @@
       <div id="scissors" class="scissors"></div>
     </section>
 
-    <section id="step2" class="step2">
+    <section id="step2" class="step2 hidden">
       <div id="player1" class="player1"></div>
       <div id="cpu" class="cpu"></div>
     </section>
 
-    <section id="step3" class="step3">
+    <section id="step3" class="step3 hidden">
       <div id="s3-player1" class="player1"></div>
       <div id="cpu1" class="cpu1"></div>
     </section>
 
-    <section id="step4" class="step4">
+    <section id="step4" class="step4 hidden">
       <div id="s4-player1" class="player1"></div>
       <div id="cpu1" class="cpu1"></div>
       <div id="win" class="win">YOU WIN</div>
       <button id="replay" class="replay">PLAY AGAIN</button>
     </section>
 
-    <section id="step5" class="step5">
+    <section id="step5" class="step5 hidden">
       <div id="s5-player1" class="player1"></div>
       <div id="cpu1" class="cpu1"></div>
-      <div id="lose " class="win">YOU LOSE</div>
+      <div id="lose " class="lose">YOU LOSE</div>
       <button id="replay" class="replay">PLAY AGAIN</button>
     </section>
 
-    <button id="rules" class="rules">RULES</button>
+    <footer>
+      <button id="rules" class="rules">RULES</button>
+    </footer>
+
     <script src="scripts.js"></script>
   </body>
 </html>

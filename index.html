@@ -6,45 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="components/paper.js" type="text/javascript" defer></script>
+    <script src="components/rock.js" type="text/javascript" defer></script>
+    <script src="components/scissors.js" type="text/javascript" defer></script>
   </head>
   <body>
     <div id="container" class="container">
       <ul class="bold">
-        <li>ROCK</li>
-        <li>PAPER</li>
-        <li>SCISSORS</li>
+        <li>Rock</li>
+        <li>Paper</li>
+        <li>Scissors</li>
       </ul>
       <div id="scorebox" class="scorebox">
-        <div class="scoreLabel semiBold">score</div>
+        <div class="scoreLabel semiBold">Score</div>
         <div id="score" class="score bold">12</div>
       </div>
     </div>
 
     <section id="step1" class="step1">
       <div class="upper">
-        <div id="paper" class="paper">
-          <div class="iconContainer">
-            <div class="icon"></div>
-          </div>
-        </div>
-
-        <div id="scissors" class="scissors">
-          <div class="iconContainer">
-            <div class="icon"></div>
-          </div>
-        </div>
+        <paper-component></paper-component>
+        <scissors-component></scissors-component>
       </div>
 
       <div class="lower">
-        <div id="rock" class="rock">
-          <div class="iconContainer"><div class="icon"></div></div>
-        </div>
+        <rock-component></rock-component>
       </div>
     </section>
 
     <section id="step2" class="step2 hidden">
-      <div id="player1" class="player1"></div>
-      <div id="cpu" class="cpu"></div>
+      <div id="player1" class="player1">
+        <h1>You picked</h1>
+      </div>
+      <div id="cpu" class="cpu">
+        <h1>The house picked</h1>
+      </div>
     </section>
 
     <section id="step3" class="step3 hidden">
@@ -55,15 +51,8 @@
     <section id="step4" class="step4 hidden">
       <div id="s4-player1" class="player1"></div>
       <div id="cpu1" class="cpu1"></div>
-      <div id="win" class="win">YOU WIN</div>
-      <button id="replay" class="replay">PLAY AGAIN</button>
-    </section>
-
-    <section id="step5" class="step5 hidden">
-      <div id="s5-player1" class="player1"></div>
-      <div id="cpu1" class="cpu1"></div>
-      <div id="lose" class="lose">YOU LOSE</div>
-      <button id="replay" class="replay">PLAY AGAIN</button>
+      <div id="result" class="result">You win/You Lose</div>
+      <button id="replay" class="replay">Play again</button>
     </section>
 
     <footer>

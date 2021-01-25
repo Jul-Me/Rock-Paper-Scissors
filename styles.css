@@ -131,4 +131,25 @@ footer {
 h1 {
   font-size: 17px;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 34.11px;
+}
+
+.step2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+}
+
+.loading {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #162240;
 }

@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <section id="step1" class="step1">
+    <section id="step1" class="step1 hidden">
       <div class="upper">
         <paper-component></paper-component>
         <scissors-component></scissors-component>
@@ -34,25 +34,21 @@
       </div>
     </section>
 
-    <section id="step2" class="step2 hidden">
-      <div id="player1" class="player1">
+    <section id="step2" class="step2">
+      <div id="player" class="player">
         <h1>You picked</h1>
+        <rock-component></rock-component>
       </div>
-      <div id="cpu" class="cpu">
+
+      <div id="result" class="result">
+        <span>You win/You Lose</span>
+        <button id="replay" class="replay">Play again</button>
+      </div>
+
+      <div id="house" class="house">
         <h1>The house picked</h1>
+        <div class="loading"></div>
       </div>
-    </section>
-
-    <section id="step3" class="step3 hidden">
-      <div id="s3-player1" class="player1"></div>
-      <div id="cpu1" class="cpu1"></div>
-    </section>
-
-    <section id="step4" class="step4 hidden">
-      <div id="s4-player1" class="player1"></div>
-      <div id="cpu1" class="cpu1"></div>
-      <div id="result" class="result">You win/You Lose</div>
-      <button id="replay" class="replay">Play again</button>
     </section>
 
     <footer>

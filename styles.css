@@ -88,10 +88,6 @@ ul {
   cursor: pointer;
 }
 
-.rules:active {
-  outline: none;
-}
-
 footer {
   padding: 20px;
   position: fixed;
@@ -152,4 +148,117 @@ h1 {
   height: 160px;
   border-radius: 50%;
   background-color: #162240;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
+}
+
+.replay {
+  color: #162240;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 8px;
+  border-radius: 5px;
+  width: 120px;
+  height: 25px;
+  cursor: pointer;
+  background-color: floralwhite;
+  border: none;
+  margin-top: 10px;
+}
+
+.replay:focus,
+.rules:focus {
+  outline: none;
+}
+
+.replay:active {
+  color: #ac0032;
+}
+
+span {
+  font-size: 35px;
+}
+
+/* Ripple Animation */
+.ripple-effect {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2);
+}
+
+.ripple-effect > div {
+  position: relative;
+  font-size: 72px;
+  top: 5px;
+  left: -5px;
+}
+
+.ripple-effect::after {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  right: 0;
+  bottom: 0;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border: 18px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  animation-name: ripple;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+  z-index: -1;
+}
+
+.ripple-effect::before {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  right: 0;
+  bottom: 0;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border: 18px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  animation-name: ripple;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+  z-index: -1;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(1.5, 1.5, 1);
+  }
 }

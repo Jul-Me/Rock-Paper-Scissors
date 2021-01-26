@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="components/paper.js" type="text/javascript" defer></script>
-    <script src="components/rock.js" type="text/javascript" defer></script>
-    <script src="components/scissors.js" type="text/javascript" defer></script>
   </head>
   <body>
     <div id="container" class="container">
@@ -23,7 +20,7 @@
       </div>
     </div>
 
-    <section id="step1" class="step1 hidden">
+    <section id="step1" class="step1">
       <div class="upper">
         <paper-component></paper-component>
         <scissors-component></scissors-component>
@@ -34,7 +31,7 @@
       </div>
     </section>
 
-    <section id="step2" class="step2">
+    <section id="step2" class="step2 hidden">
       <div id="player" class="player">
         <h1>You picked</h1>
         <div class="ripple-effect">
@@ -57,6 +54,9 @@
       <button id="rules" class="rules">RULES</button>
     </footer>
 
+    <script src="components/paper.js" type="text/javascript"></script>
+    <script src="components/rock.js" type="text/javascript"></script>
+    <script src="components/scissors.js" type="text/javascript"></script>
     <script src="scripts.js"></script>
   </body>
 </html>

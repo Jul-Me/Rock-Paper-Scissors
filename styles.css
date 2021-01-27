@@ -147,7 +147,28 @@ h1 {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-color: #162240;
+  background: linear-gradient(#eaeaea00 50%, #1a3660),
+    linear-gradient(#1a3660, #19264700 50%);
+  background-position: 0 0, 100% 0;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  animation: rota 3s infinite;
+}
+
+@keyframes rota {
+  25% {
+    transform: rotate(270deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
 
 .result {

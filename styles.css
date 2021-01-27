@@ -283,3 +283,20 @@ span {
     transform: scale3d(1.5, 1.5, 1);
   }
 }
+
+.flash-effect {
+  border-radius: 100%;
+  animation: flash linear 1s infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

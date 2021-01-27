@@ -10,8 +10,10 @@ const houseSelectionEl = document.getElementById('houseSelection');
 const paperComponent = '<paper-component></paper-component>';
 const scissorsComponent = '<scissors-component></scissors-component>';
 const rockComponent = '<rock-component></rock-component>';
+const resultTextEl = document.getElementById('resultText');
 let playerSelection = '';
 let playerComponent = '';
+let houseSelection = '';
 
 paperEl.addEventListener('click', () => {
   playerSelection = 'paper';
@@ -34,25 +36,73 @@ rockEl.addEventListener('click', () => {
 function nextPage() {
   step1El.classList.add('hidden');
   step2El.classList.remove('hidden');
-  resultEl.classList.add('hidden');
 
   playerSelectionEl.innerHTML = playerComponent;
 
-  setTimeout(finalPage, 1000);
+  setTimeout(nextStep, 1000);
 }
 
-function finalPage() {
+function nextStep() {
   loadingEl.classList.add('hidden');
 
   getHouseSelection();
+
+  houseSelectionEl.classList.add('flash-effect');
+  playerSelectionEl.classList.add('flash-effect');
+
+  setTimeout(finalPage, 500);
+}
+
+function finalPage() {
+  houseSelectionEl.classList.remove('flash-effect');
+  playerSelectionEl.classList.remove('flash-effect');
+  resultEl.classList.remove('hidden');
+
+  resultTextEl.innerHTML = getPlayerResult();
 }
 
 function getHouseSelection() {
   const arr = [paperComponent, scissorsComponent, rockComponent];
+  const stringArr = ['paper', 'scissors', 'rock'];
 
   let random = Math.random();
   random *= arr.length;
   const index = Math.floor(random);
 
   houseSelectionEl.innerHTML = arr[index];
+  houseSelection = stringArr[index];
+}
+
+function getPlayerResult() {
+  if (houseSelection === 'paper') {
+    if (playerSelection === 'rock') {
+      return 'You Lose';
+    } else if (playerSelection === 'scissors') {
+      return 'You Win';
+    } else {
+      return 'Draw';
+    }
+  }
+
+  if (houseSelection === 'scissors') {
+    if (playerSelection === 'rock') {
+      return 'You Win';
+    } else if (playerSelection === 'paper') {
+      return 'You Lose';
+    } else {
+      return 'Draw';
+    }
+  }
+
+  if (houseSelection === 'rock') {
+    if (playerSelection === 'scissors') {
+      return 'You Lose';
+    } else if (playerSelection === 'paper') {
+      return 'You Win';
+    } else {
+      return 'Draw';
+    }
+  }
+
+  return '';
 }

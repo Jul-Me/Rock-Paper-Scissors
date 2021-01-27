@@ -1,23 +1,35 @@
 const paperEl = document.getElementById('paper');
 const rockEl = document.getElementById('rock');
 const scissorsEl = document.getElementById('scissors');
-playerSelection = '';
+const step1El = document.getElementById('step1');
+const step2El = document.getElementById('step2');
+const resultEl = document.getElementById('result');
+const playerSelectionEl = document.getElementById('playerSelection');
+let playerSelection = '';
+let playerComponent = '';
 
 paperEl.addEventListener('click', () => {
   playerSelection = 'paper';
-  step2();
+  playerComponent = '<paper-component></paper-component>';
+  nextPage();
 });
 
 scissorsEl.addEventListener('click', () => {
   playerSelection = 'scissors';
-  step2();
+  playerComponent = '<scissors-component></scissors-component>';
+  nextPage();
 });
 
 rockEl.addEventListener('click', () => {
   playerSelection = 'rock';
-  step2();
+  playerComponent = '<rock-component></rock-component>';
+  nextPage();
 });
 
-function step2() {
-  console.log(playerSelection);
+function nextPage() {
+  step1El.classList.add('hidden');
+  step2El.classList.remove('hidden');
+  resultEl.classList.add('hidden');
+
+  playerSelectionEl.innerHTML = playerComponent;
 }

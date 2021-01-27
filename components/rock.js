@@ -30,7 +30,12 @@ class Rock extends HTMLElement {
           background-repeat: no-repeat;
           padding: 40px;
           background-image: url(images/icon-rock.svg);
-				}
+        }
+
+        .rock:hover {
+          box-shadow: 0px 0px 20px 8px #9e1532;
+          cursor: pointer;
+        }
       </style>
 
       <div id="rock" class="rock">

@@ -30,7 +30,12 @@ class Paper extends HTMLElement {
           background-repeat: no-repeat;
           padding: 40px;
 					background-image: url(images/icon-paper.svg);
-				}
+        }
+
+        .paper:hover {
+          box-shadow: 0px 0px 20px 8px #2945c3;
+          cursor: pointer;
+        }
       </style>
 
       <div id="paper" class="paper">

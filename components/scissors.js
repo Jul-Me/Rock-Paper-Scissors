@@ -30,7 +30,12 @@ class Scissors extends HTMLElement {
           background-repeat: no-repeat;
           padding: 40px;
           background-image: url(images/icon-scissors.svg);
-				}
+        }
+
+        .scissors:hover {
+          box-shadow: 0px 0px 20px 8px #c76c1b;
+          cursor: pointer;
+        }
       </style>
 
       <div id="scissors" class="scissors">

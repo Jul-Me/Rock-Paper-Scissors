@@ -7,13 +7,26 @@ const resultEl = document.getElementById('result');
 const playerSelectionEl = document.getElementById('playerSelection');
 const loadingEl = document.getElementById('loading');
 const houseSelectionEl = document.getElementById('houseSelection');
+const resultTextEl = document.getElementById('resultText');
+const replayEl = document.getElementById('replay');
+const scoreEl = document.getElementById('score');
+const modalEl = document.getElementById('modal');
+const rulesEl = document.getElementById('rules');
+const closeEl = document.getElementsByClassName('close')[0];
+
 const paperComponent = '<paper-component></paper-component>';
 const scissorsComponent = '<scissors-component></scissors-component>';
 const rockComponent = '<rock-component></rock-component>';
-const resultTextEl = document.getElementById('resultText');
+
 let playerSelection = '';
 let playerComponent = '';
 let houseSelection = '';
+let score = 0;
+
+if (localStorage.getItem('score')) {
+  score = Number(localStorage.getItem('score'));
+  scoreEl.innerHTML = localStorage.getItem('score');
+}
 
 paperEl.addEventListener('click', () => {
   playerSelection = 'paper';
@@ -59,6 +72,17 @@ function finalPage() {
   resultEl.classList.remove('hidden');
 
   resultTextEl.innerHTML = getPlayerResult();
+
+  getScore();
+  winEffect();
+}
+
+function winEffect() {
+  if (getPlayerResult() === 'You Win') {
+    playerSelectionEl.classList.add('ripple-effect');
+  } else if (getPlayerResult() === 'You Lose') {
+    houseSelectionEl.classList.add('ripple-effect');
+  }
 }
 
 function getHouseSelection() {
@@ -106,3 +130,33 @@ function getPlayerResult() {
 
   return '';
 }
+
+function getScore() {
+  if (getPlayerResult() === 'You Win') {
+    score++;
+    scoreEl.innerHTML = score;
+  } else if (getPlayerResult() === 'You Lose' && score !== 0) {
+    score--;
+    scoreEl.innerHTML = score;
+  }
+}
+
+replayEl.addEventListener('click', () => {
+  localStorage.setItem('score', score);
+
+  location.reload();
+});
+
+rulesEl.onclick = function () {
+  modalEl.classList.remove('hidden');
+};
+
+closeEl.onclick = function () {
+  modalEl.classList.add('hidden');
+};
+
+window.onclick = function (event) {
+  if (event.target == modalEl) {
+    modalEl.classList.add('hidden');
+  }
+};

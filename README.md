@@ -9,7 +9,7 @@ Rock Paper Scissors is a personal project build in Vanilla JavaScript and CSS. W
 
 <a href="https://rock-paper-scissors-julian.netlify.app/"><img src="https://user-images.githubusercontent.com/76056381/147967469-f1ec2b94-19f1-4cab-976d-cee59d71ce04.png" width="317em" height="320em"/> </a>
 <a href="https://rock-paper-scissors-julian.netlify.app/"><img src="https://user-images.githubusercontent.com/76056381/147967633-76ba4316-ac96-46c8-9be7-5cfdc1c9470e.png" width="317em" height="320em"/> </a>
-<a href="https://rock-paper-scissors-julian.netlify.app/"><img src="https://user-images.githubusercontent.com/76056381/147968016-dfa04cea-0843-4df6-b66f-ca156fdd533e.png" width="317em" height="320em"/> </a>
+
 
 
 
